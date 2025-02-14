@@ -10,6 +10,10 @@ def home():
 def sf6CharSel():
     return render_template("sf6CharSel.html")
 
+@app.route("/sf6/<name>")
+def characterPage(name):
+    return render_template("sf6Combo.html", character=name)
+
 @app.route("/tekken8")
 def tek8CharSel():
     return "Tekken 8 Character Select (Placeholder)"
