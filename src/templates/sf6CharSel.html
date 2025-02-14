@@ -28,7 +28,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
-            max-width: 500px; /* Any larger misaligns the center of the grid with edge rows */
+            max-width: 500px;
             margin: 20px auto;
             justify-content: center;
         }
@@ -56,97 +56,26 @@
         <h2>Select your character</h2>
     </div>
     <div class="edge-row">
-        <!-- First Row (2 characters) -->
         <a href="{{ url_for('characterPage', name='Luke') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Luke.png') }}" alt="Luke">
+            <img src="{{ url_for('static', filename='images/cropped_Luke.png') }}" alt="Luke">
         </a>
         <a href="{{ url_for('characterPage', name='Jamie') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Jamie.png') }}" alt="Jamie">
+            <img src="{{ url_for('static', filename='images/cropped_Jamie.png') }}" alt="Jamie">
         </a>
     </div>
     <div class="roster">
-        <!-- Second Row (4 characters) -->
-        <a href="{{ url_for('characterPage', name='Manon') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Manon.png') }}" alt="Manon">
+        {% for character in ["Manon", "Kimberly", "Marisa", "Lily", "JP", "Juri", "Dee Jay", "Cammy", "Ryu", "E_Honda", "Blanka", "Guile", "Ken", "Chun Li", "Zangief", "Dhalsim", "Rashid", "AKI", "Ed", "Akuma"] %}
+        <a href="{{ url_for('characterPage', name=character) }}" class="character">
+            <img src="{{ url_for('static', filename='images/cropped_' + character.replace(' ', '_') + '.png') }}" alt="{{ character }}">
         </a>
-        <a href="{{ url_for('characterPage', name='Kimberly') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Kimberly.png') }}" alt="Kimberly">
-        </a>
-        <a href="{{ url_for('characterPage', name='Marisa') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Marisa.png') }}" alt="Marisa">
-        </a>
-        <a href="{{ url_for('characterPage', name='Lily') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Lily.png') }}" alt="Lily">
-        </a>
-
-        <!-- Third Row (4 characters) -->
-        <a href="{{ url_for('characterPage', name='JP') }}" class="character">
-            <img src="{{ url_for('static', filename='images/JP.png') }}" alt="JP">
-        </a>
-        <a href="{{ url_for('characterPage', name='Juri') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Juri.png') }}" alt="Juri">
-        </a>
-        <a href="{{ url_for('characterPage', name='Dee Jay') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Dee_Jay.png') }}" alt="Dee Jay">
-        </a>
-        <a href="{{ url_for('characterPage', name='Cammy') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Cammy.png') }}" alt="Cammy">
-        </a>
-
-        <!-- Fourth Row (4 characters) -->
-        <a href="{{ url_for('characterPage', name='Ryu') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Ryu.png') }}" alt="Ryu">
-        </a>
-        <a href="{{ url_for('characterPage', name='E. Honda') }}" class="character">
-            <img src="{{ url_for('static', filename='images/E_Honda.png') }}" alt="E. Honda">
-        </a>
-        <a href="{{ url_for('characterPage', name='Blanka') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Blanka.png') }}" alt="Blanka">
-        </a>
-        <a href="{{ url_for('characterPage', name='Guile') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Guile.png') }}" alt="Guile">
-        </a>
-
-        <!-- Fifth Row (4 characters) -->
-        <a href="{{ url_for('characterPage', name='Ken') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Ken.png') }}" alt="Ken">
-        </a>
-        <a href="{{ url_for('characterPage', name='Chun Li') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Chun_Li.png') }}" alt="Chun Li">
-        </a>
-        <a href="{{ url_for('characterPage', name='Zangief') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Zangief.png') }}" alt="Zangief">
-        </a>
-        <a href="{{ url_for('characterPage', name='Dhalsim') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Dhalsim.png') }}" alt="Dhalsim">
-        </a>
-
-        <!-- Sixth Row (4 characters) -->
-        <a href="{{ url_for('characterPage', name='Rashid') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Rashid.png') }}" alt="Rashid">
-        </a>
-        <a href="{{ url_for('characterPage', name='AKI') }}" class="character">
-            <img src="{{ url_for('static', filename='images/AKI.png') }}" alt="AKI">
-        </a>
-        <a href="{{ url_for('characterPage', name='Ed') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Ed.png') }}" alt="Ed">
-        </a>
-        <a href="{{ url_for('characterPage', name='Akuma') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Akuma.png') }}" alt="Akuma">
-        </a>
+        {% endfor %}
     </div>
     <div class="edge-row">
-        <!-- Seventh Row (3 characters) -->
-        <a href="{{ url_for('characterPage', name='M. Bison') }}" class="character">
-            <img src="{{ url_for('static', filename='images/M_Bison.png') }}" alt="M. Bison">
+        {% for character in ["M_Bison", "Terry", "Mai"] %}
+        <a href="{{ url_for('characterPage', name=character) }}" class="character">
+            <img src="{{ url_for('static', filename='images/cropped_' + character.replace(' ', '_') + '.png') }}" alt="{{ character }}">
         </a>
-        <a href="{{ url_for('characterPage', name='Terry') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Terry.png') }}" alt="Terry">
-        </a>
-        <a href="{{ url_for('characterPage', name='Mai') }}" class="character">
-            <img src="{{ url_for('static', filename='images/Mai.png') }}" alt="Mai">
-        </a> 
+        {% endfor %}
     </div>
 </body>
-
 </html>
