@@ -8,7 +8,7 @@ def home():
 
 @app.route("/sf6")
 def sf6CharSel():
-    return "Street Fighter 6 Character Select (Placeholder)"
+    return render_template("sf6CharSel.html")
 
 @app.route("/tekken8")
 def tek8CharSel():

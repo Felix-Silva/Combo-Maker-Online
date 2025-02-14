@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo Maker Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 1%;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        .roster {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .character {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            overflow: hidden;
+            object-fit: fill;
+        }
+        .button img {
+            width: 350px;  /* Adjust size as needed */
+            height: auto;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .button img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Street Fighter 6</h1>
+        <h2>Select your character</h2>
+    </div>
+    <div class="roster">
+        <!-- First Row (2 characters) -->
+        <div class="character" onclick="selectCharacter(this, 'Luke')">
+            <img src="{{ url_for('static', filename='images/Luke.png') }}" alt="Luke">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Jamie')">
+            <img src="{{ url_for('static', filename='images/Jamie.png') }}" alt="Jamie">
+        </div>
+
+        <!-- Second Row (4 characters) -->
+        <div class="character" onclick="selectCharacter(this, 'Manon')">
+            <img src="{{ url_for('static', filename='images/Manon.png') }}" alt="Manon">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Kimberly')">
+            <img src="{{ url_for('static', filename='images/Kimberly.png') }}" alt="Kimberly">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Marisa')">
+            <img src="{{ url_for('static', filename='images/Marisa.png') }}" alt="Marisa">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Lily')">
+            <img src="{{ url_for('static', filename='images/Lily.png') }}" alt="Lily">
+        </div>
+
+        <!-- Third Row (4 characters) -->
+        <div class="character" onclick="selectCharacter(this, 'JP')">
+            <img src="{{ url_for('static', filename='images/JP.png') }}" alt="JP">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Juri')">
+            <img src="{{ url_for('static', filename='images/Juri.png') }}" alt="Juri">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Dee Jay')">
+            <img src="{{ url_for('static', filename='images/Dee_Jay.png') }}" alt="Dee Jay">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Cammy')">
+            <img src="{{ url_for('static', filename='images/Cammy.png') }}" alt="Cammy">
+        </div>
+
+        <!-- Fourth Row (4 characters) -->
+        <div class="character" onclick="selectCharacter(this, 'Ryu')">
+            <img src="{{ url_for('static', filename='images/Ryu.png') }}" alt="Ryu">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'E. Honda')">
+            <img src="{{ url_for('static', filename='images/E_Honda.png') }}" alt="E. Honda">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Blanka')">
+            <img src="{{ url_for('static', filename='images/Blanka.png') }}" alt="Blanka">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Guile')">
+            <img src="{{ url_for('static', filename='images/Guile.png') }}" alt="Guile">
+        </div>
+
+        <!-- Fifth Row (4 characters) -->
+        <div class="character" onclick="selectCharacter(this, 'Ken')">
+            <img src="{{ url_for('static', filename='images/Ken.png') }}" alt="Ken">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Chun Li')">
+            <img src="{{ url_for('static', filename='images/Chun_Li.png') }}" alt="Chun Li">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Zangief')">
+            <img src="{{ url_for('static', filename='images/Zangief.png') }}" alt="Zangief">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Dhalsim')">
+            <img src="{{ url_for('static', filename='images/Dhalsim.png') }}" alt="Dhalsim">
+        </div>
+
+        <!-- Sixth Row (4 characters) -->
+        <div class="character" onclick="selectCharacter(this, 'Rashid')">
+            <img src="{{ url_for('static', filename='images/Rashid.png') }}" alt="Rashid">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'AKI')">
+            <img src="{{ url_for('static', filename='images/AKI.png') }}" alt="AKI">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Ed')">
+            <img src="{{ url_for('static', filename='images/Ed.png') }}" alt="Ed">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Akuma')">
+            <img src="{{ url_for('static', filename='images/Akuma.png') }}" alt="Akuma">
+        </div>
+
+        <!-- Seventh Row (3 characters) -->
+        <div class="character" onclick="selectCharacter(this, 'M. Bison')">
+            <img src="{{ url_for('static', filename='images/M_Bison.png') }}" alt="M. Bison">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Terry')">
+            <img src="{{ url_for('static', filename='images/Terry.png') }}" alt="Terry">
+        </div>
+        <div class="character" onclick="selectCharacter(this, 'Mai')">
+            <img src="{{ url_for('static', filename='images/Mai.png') }}" alt="Mai">
+        </div>
+    </div>
+</body>
+</html>
