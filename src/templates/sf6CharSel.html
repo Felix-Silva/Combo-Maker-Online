@@ -9,41 +9,53 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 1%;
+            background-color: darkgray;
         }
-        h1 {
-            font-size: 2.5rem;
+        h2 {
+            margin-top: 0;
+        }
+        .logo {
+            height: 160px;
+            display: block;
+            margin: 0 auto;
+        }
+        .edge-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
         .roster {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
-            max-width: 800px;
+            max-width: 500px; /* Any larger misaligns the center of the grid with edge rows */
             margin: 20px auto;
+            justify-content: center;
         }
         .character {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 10px;
             overflow: hidden;
-            object-fit: fill;
-        }
-        .button img {
-            width: 350px;  /* Adjust size as needed */
-            height: auto;
-            border-radius: 10px;
+            display: flex;
             transition: 0.3s;
+            cursor: pointer;
+            border: 3px solid transparent;
+            justify-content: center;
         }
-        .button img:hover {
+        .character img:hover {
             transform: scale(1.1);
         }
     </style>
 </head>
 <body>
     <div>
-        <h1>Street Fighter 6</h1>
+        <header>
+            <img src="{{ url_for('static', filename='images/sf6Banner.png') }}" alt="Street Fighter 6" class="logo">
+        </header>
         <h2>Select your character</h2>
     </div>
-    <div class="roster">
+    <div class="edge-row">
         <!-- First Row (2 characters) -->
         <div class="character" onclick="selectCharacter(this, 'Luke')">
             <img src="{{ url_for('static', filename='images/Luke.png') }}" alt="Luke">
@@ -51,7 +63,8 @@
         <div class="character" onclick="selectCharacter(this, 'Jamie')">
             <img src="{{ url_for('static', filename='images/Jamie.png') }}" alt="Jamie">
         </div>
-
+    </div>
+    <div class="roster">
         <!-- Second Row (4 characters) -->
         <div class="character" onclick="selectCharacter(this, 'Manon')">
             <img src="{{ url_for('static', filename='images/Manon.png') }}" alt="Manon">
@@ -121,7 +134,8 @@
         <div class="character" onclick="selectCharacter(this, 'Akuma')">
             <img src="{{ url_for('static', filename='images/Akuma.png') }}" alt="Akuma">
         </div>
-
+        </div>
+    <div class="edge-row">
         <!-- Seventh Row (3 characters) -->
         <div class="character" onclick="selectCharacter(this, 'M. Bison')">
             <img src="{{ url_for('static', filename='images/M_Bison.png') }}" alt="M. Bison">
@@ -131,7 +145,7 @@
         </div>
         <div class="character" onclick="selectCharacter(this, 'Mai')">
             <img src="{{ url_for('static', filename='images/Mai.png') }}" alt="Mai">
-        </div>
+        </div> 
     </div>
 </body>
 </html>
