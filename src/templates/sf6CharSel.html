@@ -3,50 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='sf6CharSel.css') }}">
     <title>Combo Maker Online</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 1%;
-            background-color: darkgray;
-        }
-        h2 {
-            margin-top: 0;
-        }
-        .logo {
-            height: 160px;
-            display: block;
-            margin: 0 auto;
-        }
-        .edge-row {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .roster {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            max-width: 500px;
-            margin: 20px auto;
-            justify-content: center;
-        }
-        .character {
-            width: 100px;
-            height: 100px;
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            transition: 0.3s;
-            cursor: pointer;
-            border: 3px solid transparent;
-            justify-content: center;
-        }
-        .character img:hover {
-            transform: scale(1.1);
-        }
-    </style>
 </head>
 <body>
     <div>
