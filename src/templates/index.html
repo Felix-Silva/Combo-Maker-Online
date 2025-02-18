@@ -3,35 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combo Maker Online</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-            background-color: darkgray;
-        }
-        h1 {
-            font-size: 2.5rem;
-        }
-        .button {
-            display: block;
-            margin: 100px auto;
-            width: fit-content;
-        }
-        .button img {
-            width: 350px;
-            height: auto;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-        .button img:hover {
-            transform: scale(1.1);
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>COMBO MAKER ONLINE</title>
 </head>
 <body>
-    <h1>Combo Maker Online</h1>
+    <h1>COMBO MAKER ONLINE</h1>
     <div>
         <a href="/sf6" class="button">
             <img src="{{ url_for('static', filename='images/sf6Logo.png') }}" alt="Street Fighter 6">

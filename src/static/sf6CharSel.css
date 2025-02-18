@@ -2,13 +2,15 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 1%;
-    background-image: linear-gradient(to right, rgb(165, 0, 165), rgb(0, 0, 207));
+    background: linear-gradient(to right, purple 0%, rgb(49, 49, 49) 30%, rgb(49, 49, 49) 70%, rgb(0, 0, 167) 100%);
+
 }
 header {
     margin-top: 0;
 }
 h2 {
     margin-top: 0;
+    color: rgb(255, 255, 255)
 }
 .logo {
     height: 160px;
