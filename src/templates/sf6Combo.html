@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='sf6Combo.css') }}">
     <title>{{ character }}</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: darkgray;
-        }
-        h1 {
-            font-size: 2rem;
-        }
-        .moves-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .move-item {
-            margin: 10px 0;
-            font-size: 1.2rem;
-        }
-    </style>
+
 </head>
 <body>
     <h1>{{ character }}</h1>
+    <div class="bottom-container">
+        <div class="direction-grid">
+            <img src="{{ url_for('static', filename='images/dir7.png') }}" alt="7">
+            <img src="{{ url_for('static', filename='images/dir8.png') }}" alt="8">
+            <img src="{{ url_for('static', filename='images/dir9.png') }}" alt="9">
+            <img src="{{ url_for('static', filename='images/dir4.png') }}" alt="4">
+            <img src="{{ url_for('static', filename='images/dir5.png') }}" alt="5">
+            <img src="{{ url_for('static', filename='images/dir6.png') }}" alt="6">
+            <img src="{{ url_for('static', filename='images/dir1.png') }}" alt="1">
+            <img src="{{ url_for('static', filename='images/dir2.png') }}" alt="2">
+            <img src="{{ url_for('static', filename='images/dir3.png') }}" alt="3">
+        </div>
+    
+        <div class="buttons">
+            <img src="{{ url_for('static', filename='images/icon_punch_l.png') }}" alt="lp">
+            <img src="{{ url_for('static', filename='images/icon_punch_m.png') }}" alt="mp">
+            <img src="{{ url_for('static', filename='images/icon_punch_h.png') }}" alt="hp">
+            <img src="{{ url_for('static', filename='images/icon_kick_l.png') }}" alt="lk">
+            <img src="{{ url_for('static', filename='images/icon_kick_m.png') }}" alt="mk">
+            <img src="{{ url_for('static', filename='images/icon_kick_h.png') }}" alt="hk">
+        </div>
+    </div>
+    
 </body>
 </html>
