@@ -5,32 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='sf6Combo.css') }}">
     <title>{{ character }}</title>
-
 </head>
 <body>
     <h1>{{ character }}</h1>
+
+    <!-- Combo Preview -->
+    <div id="comboPreview" class="combo-preview"></div>
+
+    <!-- Bottom Container -->
     <div class="bottom-container">
+        <!-- Direction Grid -->
         <div class="direction-grid">
-            <img src="{{ url_for('static', filename='images/dir7.png') }}" alt="7">
-            <img src="{{ url_for('static', filename='images/dir8.png') }}" alt="8">
-            <img src="{{ url_for('static', filename='images/dir9.png') }}" alt="9">
-            <img src="{{ url_for('static', filename='images/dir4.png') }}" alt="4">
-            <img src="{{ url_for('static', filename='images/dir5.png') }}" alt="5">
-            <img src="{{ url_for('static', filename='images/dir6.png') }}" alt="6">
-            <img src="{{ url_for('static', filename='images/dir1.png') }}" alt="1">
-            <img src="{{ url_for('static', filename='images/dir2.png') }}" alt="2">
-            <img src="{{ url_for('static', filename='images/dir3.png') }}" alt="3">
+            <img src="{{ url_for('static', filename='images/dir7.png') }}" alt="7" onclick="addToCombo('dir7.png')">
+            <img src="{{ url_for('static', filename='images/dir8.png') }}" alt="8" onclick="addToCombo('dir8.png')">
+            <img src="{{ url_for('static', filename='images/dir9.png') }}" alt="9" onclick="addToCombo('dir9.png')">
+            <img src="{{ url_for('static', filename='images/dir4.png') }}" alt="4" onclick="addToCombo('dir4.png')">
+            <img src="{{ url_for('static', filename='images/dir5.png') }}" alt="5" onclick="addToCombo('dir5.png')">
+            <img src="{{ url_for('static', filename='images/dir6.png') }}" alt="6" onclick="addToCombo('dir6.png')">
+            <img src="{{ url_for('static', filename='images/dir1.png') }}" alt="1" onclick="addToCombo('dir1.png')">
+            <img src="{{ url_for('static', filename='images/dir2.png') }}" alt="2" onclick="addToCombo('dir2.png')">
+            <img src="{{ url_for('static', filename='images/dir3.png') }}" alt="3" onclick="addToCombo('dir3.png')">
         </div>
-    
+
+        <!-- Attack Buttons -->
         <div class="buttons">
-            <img src="{{ url_for('static', filename='images/icon_punch_l.png') }}" alt="lp">
-            <img src="{{ url_for('static', filename='images/icon_punch_m.png') }}" alt="mp">
-            <img src="{{ url_for('static', filename='images/icon_punch_h.png') }}" alt="hp">
-            <img src="{{ url_for('static', filename='images/icon_kick_l.png') }}" alt="lk">
-            <img src="{{ url_for('static', filename='images/icon_kick_m.png') }}" alt="mk">
-            <img src="{{ url_for('static', filename='images/icon_kick_h.png') }}" alt="hk">
+            <img src="{{ url_for('static', filename='images/icon_punch_l.png') }}" alt="lp" onclick="addToCombo('icon_punch_l.png')">
+            <img src="{{ url_for('static', filename='images/icon_punch_m.png') }}" alt="mp" onclick="addToCombo('icon_punch_m.png')">
+            <img src="{{ url_for('static', filename='images/icon_punch_h.png') }}" alt="hp" onclick="addToCombo('icon_punch_h.png')">
+            <img src="{{ url_for('static', filename='images/icon_kick_l.png') }}" alt="lk" onclick="addToCombo('icon_kick_l.png')">
+            <img src="{{ url_for('static', filename='images/icon_kick_m.png') }}" alt="mk" onclick="addToCombo('icon_kick_m.png')">
+            <img src="{{ url_for('static', filename='images/icon_kick_h.png') }}" alt="hk" onclick="addToCombo('icon_kick_h.png')">
         </div>
     </div>
-    
+
+    <script>
+        function addToCombo(imageFile) {
+            const preview = document.getElementById("comboPreview");
+
+            // Create an <img> element
+            const img = document.createElement("img");
+            img.src = "{{ url_for('static', filename='images/') }}" + imageFile;
+            img.classList.add("combo-icon");
+
+            // Add image to preview container
+            preview.appendChild(img);
+        }
+    </script>
 </body>
 </html>
